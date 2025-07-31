@@ -35,6 +35,8 @@ By the end of this lab, you'll master:
 
 _You'll transform a boring button into one that responds smoothly to every user interaction._
 
+<img src="assets/intro_transition_1.png" alt="Responsive Button Example" width="500">
+
 ### Playground 2: Form Input Highlights 📝
 
 **Learning Focus**: Focus states and accessibility-friendly design
@@ -45,6 +47,8 @@ _You'll transform a boring button into one that responds smoothly to every user 
 - **Time**: ~25 minutes
 
 _Build form inputs that guide users with gentle, helpful visual cues._
+
+<img src="assets/intro_transition_2.png" alt="Form Input Example" width="500">
 
 ### Playground 3: Interactive Cards 🃏
 
@@ -57,6 +61,8 @@ _Build form inputs that guide users with gentle, helpful visual cues._
 
 _Make content cards that feel alive and inviting when users interact with them._
 
+<img src="assets/intro_transition_3.png" alt="Interactive Cards Example" width="500">
+
 ### Playground 4: The Rainbow Cascade 🌈
 
 **Learning Focus**: Transition delays and coordinated timing
@@ -67,6 +73,8 @@ _Make content cards that feel alive and inviting when users interact with them._
 - **Time**: ~30 minutes
 
 _Build a rainbow that responds with a beautiful cascading wave effect - pure visual delight!_
+
+<img src="assets/intro_transition_4.png" alt="Rainbow Example" width="500">
 
 ### Playground 5: Pricing Card Selection 💳
 
@@ -79,6 +87,8 @@ _Build a rainbow that responds with a beautiful cascading wave effect - pure vis
 
 _Create a pricing section that helps users make confident purchasing decisions._
 
+<img src="assets/intro_transition_5.png" alt="Pricing Card Example" width="500">
+  
 ### Playground 6: Interactive Image Gallery 🖼️
 
 **Learning Focus**: Advanced transforms and performance considerations
@@ -90,6 +100,8 @@ _Create a pricing section that helps users make confident purchasing decisions._
 
 _Build a photo gallery with professional zoom and reveal effects._
 
+<img src="assets/intro_transition_6.png" alt="Image Gallery Example" width="500">
+
 ### Playground 7: Toast Notification System 🍞
 
 **Learning Focus**: Professional interaction patterns and complex state transitions
@@ -100,6 +112,8 @@ _Build a photo gallery with professional zoom and reveal effects._
 - **Time**: ~35 minutes
 
 _Design a notification system that feels as smooth as the apps users love._
+
+<img src="assets/intro_transition_7.png" alt="Toast Notification Example" width="500">
 
 ## 📝 How Each Playground Works
 
