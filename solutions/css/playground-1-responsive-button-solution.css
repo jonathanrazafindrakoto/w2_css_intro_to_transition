@@ -17,10 +17,10 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  
+
   /* Layout */
   margin: 10px;
-  
+
   /* ✅ SOLUTION: Added smooth transitions for all properties */
   transition: all 0.3s ease;
 }
@@ -29,7 +29,7 @@
 .responsive-button:hover {
   /* ✅ SOLUTION: Color change on hover */
   background-color: #2980b9;
-  
+
   /* ✅ SOLUTION: Subtle scaling effect */
   transform: scale(1.05);
 }
@@ -38,7 +38,7 @@
 .responsive-button:active {
   /* ✅ SOLUTION: Pressed scale effect */
   transform: scale(0.98);
-  
+
   /* ✅ SOLUTION: Darker pressed color */
   background-color: #1f5f8b;
 }

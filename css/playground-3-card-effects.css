@@ -58,13 +58,13 @@
   text-align: center;
   max-width: 280px;
   margin: 1rem;
-  
+
   /* Current shadow - very subtle */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  
+
   /* Cursor hint that it's interactive */
   cursor: pointer;
-  
+
   /* TODO #1: Add your transition here!
      
      We'll be animating multiple properties:
@@ -121,7 +121,7 @@
      
      This creates the illusion that the card is rising toward the user!
   */
-  
+
   /* TODO #3: Add elevation shadow
      
      Create a bigger, more dramatic shadow to simulate the card 
@@ -134,7 +134,7 @@
      - Bigger blur (24px vs 8px) = softer, more realistic shadow
      - Darker opacity (0.15 vs 0.1) = more prominent depth
   */
-  
+
   /* TODO #4: Optional - Add subtle scaling
      
      If you want the card to feel even more prominent, you can 

@@ -14,7 +14,7 @@
   height: 200px;
   padding: 2rem;
   cursor: pointer;
-  
+
   /* Add some breathing room */
   gap: 8px;
 }
@@ -24,22 +24,38 @@
   width: 30px;
   height: 60px; /* This will grow on hover! */
   border-radius: 15px 15px 0 0; /* Rounded tops */
-  
+
   /* Prepare for animations */
   transform-origin: bottom; /* Scale from the bottom */
-  
+
   /* ✅ SOLUTION: Added base transition */
-  transition: height 0.4s ease, transform 0.4s ease;
+  transition:
+    height 0.4s ease,
+    transform 0.4s ease;
 }
 
 /* Rainbow Colors */
-.stripe-1 { background: linear-gradient(to top, #e74c3c, #c0392b); } /* Red */
-.stripe-2 { background: linear-gradient(to top, #f39c12, #d68910); } /* Orange */
-.stripe-3 { background: linear-gradient(to top, #f1c40f, #d4ac0d); } /* Yellow */
-.stripe-4 { background: linear-gradient(to top, #27ae60, #229954); } /* Green */
-.stripe-5 { background: linear-gradient(to top, #3498db, #2980b9); } /* Blue */
-.stripe-6 { background: linear-gradient(to top, #9b59b6, #8e44ad); } /* Indigo */
-.stripe-7 { background: linear-gradient(to top, #e91e63, #ad1457); } /* Violet */
+.stripe-1 {
+  background: linear-gradient(to top, #e74c3c, #c0392b);
+} /* Red */
+.stripe-2 {
+  background: linear-gradient(to top, #f39c12, #d68910);
+} /* Orange */
+.stripe-3 {
+  background: linear-gradient(to top, #f1c40f, #d4ac0d);
+} /* Yellow */
+.stripe-4 {
+  background: linear-gradient(to top, #27ae60, #229954);
+} /* Green */
+.stripe-5 {
+  background: linear-gradient(to top, #3498db, #2980b9);
+} /* Blue */
+.stripe-6 {
+  background: linear-gradient(to top, #9b59b6, #8e44ad);
+} /* Indigo */
+.stripe-7 {
+  background: linear-gradient(to top, #e91e63, #ad1457);
+} /* Violet */
 
 .rainbow-container:hover .rainbow-stripe {
   /* ✅ SOLUTION: All stripes grow when container is hovered */

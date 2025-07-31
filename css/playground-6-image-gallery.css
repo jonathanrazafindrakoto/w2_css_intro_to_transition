@@ -64,10 +64,10 @@
   border-radius: 12px;
   overflow: hidden; /* This is crucial for the zoom effect */
   cursor: pointer;
-  
+
   /* Subtle shadow for depth */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+
   /* TODO #1: Add gallery item transition
      
      The container itself will have a subtle elevation effect:
@@ -86,7 +86,7 @@
   width: 100%;
   height: 200px;
   position: relative;
-  
+
   /* TODO #2: Add the zoom transition
      
      This is where the magic happens! The image will scale up on hover:
@@ -98,19 +98,19 @@
 }
 
 /* Beautiful gradient "images" */
-.mountain { 
+.mountain {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.ocean { 
+.ocean {
   background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
 }
 
-.forest { 
+.forest {
   background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
 }
 
-.sunset { 
+.sunset {
   background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
 }
 
@@ -126,15 +126,15 @@
   bottom: 0;
   left: 0;
   right: 0;
-  
+
   /* Visual styling */
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   color: white;
   padding: 2rem 1.5rem 1.5rem;
-  
+
   /* Typography */
   text-align: left;
-  
+
   /* TODO #3: Set the initial hidden state
      
      The overlay should start invisible and slide up from below:
@@ -143,7 +143,7 @@
      
      This positions it completely below the visible area.
   */
-  
+
   /* TODO #4: Add overlay transition
      
      Smooth transitions for both opacity and position:

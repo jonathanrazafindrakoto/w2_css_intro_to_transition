@@ -1,42 +1,42 @@
 /* ===================================================
    PLAYGROUND 5: PRICING CARD SELECTION
    ===================================================
-   
-   Welcome to professional-level interaction design! You've learned 
-   state selectors, transitions, and coordination. Now you'll architect 
+
+   Welcome to professional-level interaction design! You've learned
+   state selectors, transitions, and coordination. Now you'll architect
    a complete pricing system with multiple interaction states.
-   
+
    💳 THE BUSINESS CHALLENGE:
-   These pricing cards need to guide users toward making confident 
-   purchasing decisions. They should feel trustworthy, highlight the 
+   These pricing cards need to guide users toward making confident
+   purchasing decisions. They should feel trustworthy, highlight the
    best option, and provide clear feedback for every interaction.
-   
-   This is REAL e-commerce psychology - the difference between 
+
+   This is REAL e-commerce psychology - the difference between
    users bouncing away confused or converting into customers.
-   
+
    🎯 LEARNING GOALS:
    - Design complete interaction systems with multiple states
    - Understand visual hierarchy in pricing interfaces
    - Master complex hover, focus, and selection feedback
    - Apply transition techniques to business-critical interfaces
-   
+
    📝 YOUR MISSION:
-   Create a pricing section that professional SaaS companies would 
+   Create a pricing section that professional SaaS companies would
    be proud to use on their websites!
-   
+
    ================================================= */
 
 /* STEP 1: Understanding Pricing Psychology
    ========================================
-   
+
    🔍 OBSERVE: Look at the pricing cards in your browser.
-   
+
    Current problems:
    - All cards look equally important (no hierarchy)
    - No clear feedback when hovering or focusing
    - Featured plan doesn't stand out enough
    - Buttons feel disconnected from the card experience
-   
+
    Professional pricing pages solve this with:
    - Clear visual hierarchy (featured plan stands out)
    - Smooth hover feedback (cards feel interactive)
@@ -46,8 +46,8 @@
 
 /* STEP 2: Base Card Structure
    ===========================
-   
-   Each pricing card needs to work as a cohesive unit where every 
+
+   Each pricing card needs to work as a cohesive unit where every
    element coordinates to guide the user toward a decision.
 */
 
@@ -61,17 +61,17 @@
   max-width: 280px;
   text-align: center;
   position: relative;
-  
+
   /* Subtle base shadow */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  
+
   /* TODO #1: Add your base transition
-     
+
      We'll be animating multiple properties across the entire card:
      - transform (for elevation and subtle scaling)
      - box-shadow (for depth changes)
      - border-color (for selection feedback)
-     
+
      Add this comprehensive transition:
      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   */
@@ -79,7 +79,7 @@
 
 /* STEP 3: Featured Plan Hierarchy
    ===============================
-   
+
    The "Pro" plan should immediately stand out as the recommended option.
    This is visual hierarchy - guiding user attention to the best choice.
 */
@@ -88,12 +88,12 @@
   /* Make it more prominent */
   border-color: #74b9ff;
   box-shadow: 0 8px 16px rgba(116, 185, 255, 0.15);
-  
+
   /* TODO #2: Make the featured card slightly larger
-     
+
      Add this to make the Pro plan more prominent:
      transform: scale(1.05);
-     
+
      This subtle scaling makes it feel more important without being dramatic.
   */
 }
@@ -104,7 +104,7 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  
+
   /* Badge styling */
   background: linear-gradient(135deg, #74b9ff, #0984e3);
   color: white;
@@ -114,14 +114,14 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  
+
   /* Subtle shadow */
   box-shadow: 0 4px 8px rgba(116, 185, 255, 0.3);
 }
 
 /* STEP 4: Typography and Content Hierarchy
    ========================================
-   
+
    Clear typography hierarchy helps users quickly scan and compare options.
 */
 
@@ -170,60 +170,60 @@
 
 /* STEP 5: The Hover Challenge - Card Elevation
    ============================================
-   
-   🎯 GOAL: When users hover over any pricing card, it should feel 
+
+   🎯 GOAL: When users hover over any pricing card, it should feel
    elevated and interactive - like they're considering this option.
-   
+
    💡 TECHNIQUE HINTS:
    - Use transform: translateY() for subtle lifting
    - Increase box-shadow for more dramatic elevation
    - Consider highlighting the border for selection feedback
    - Keep the featured card special even when others are hovered
-   
+
    🔧 YOUR ARCHITECTURAL TASK: Design the complete hover experience!
 */
 
 .pricing-card:hover {
   /* TODO #3: Add elevation movement
-     
+
      Make the card lift toward the user when hovered.
      Try: transform: translateY(-8px);
-     
+
      For the featured card, combine with its existing scale:
      You might need: transform: translateY(-8px) scale(1.05);
   */
-  
+
   /* TODO #4: Add elevated shadow
-     
+
      Create a more dramatic shadow for the elevated state.
      Try: box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-     
+
      This makes the card feel like it's floating higher above the page.
   */
-  
+
   /* TODO #5: Add selection border hint
-     
+
      Give a subtle hint that this card is being considered.
      Try: border-color: #74b9ff;
-     
+
      This creates a gentle selection preview.
   */
 }
 
 /* STEP 6: Featured Card Special Hover State
    =========================================
-   
+
    The featured card should maintain its prominence while still responding to hover.
 */
 
 .pricing-card.featured:hover {
   /* TODO #6: Enhanced featured card hover
-     
+
      The featured card needs special treatment. It should:
      - Lift up like other cards: translateY(-8px)
-     - Maintain its scale: scale(1.05) 
+     - Maintain its scale: scale(1.05)
      - Get an even more dramatic shadow
-     
+
      Try: transform: translateY(-8px) scale(1.05);
      And: box-shadow: 0 16px 32px rgba(116, 185, 255, 0.2);
   */
@@ -231,7 +231,7 @@
 
 /* STEP 7: Button Integration
    ==========================
-   
+
    The buttons should feel connected to the card experience, not separate.
 */
 
@@ -245,16 +245,16 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 1.5rem;
-  
+
   /* Default button appearance */
   background: #f8f9fa;
   color: #495057;
-  
+
   /* TODO #7: Add button transition
-     
+
      Buttons need their own smooth transitions:
      transition: all 0.2s ease;
-     
+
      Slightly faster than the card transitions for responsiveness.
   */
 }
@@ -268,11 +268,11 @@
 
 .select-plan:hover {
   /* TODO #8: Design button hover states
-     
+
      Regular buttons on hover:
      - background: #e9ecef;
      - transform: translateY(-2px);
-     
+
      Featured button on hover:
      - background: linear-gradient(135deg, #0984e3, #74b9ff);
      - transform: translateY(-2px);
@@ -282,34 +282,34 @@
 
 .select-plan:active {
   /* TODO #9: Add pressed states
-     
+
      When buttons are clicked, they should feel pressed:
      transform: translateY(0px);
-     
+
      This gives satisfying feedback for the click action.
   */
 }
 
 /* STEP 8: Focus States for Accessibility
    ======================================
-   
+
    Keyboard users should get the same great experience as mouse users.
 */
 
 .pricing-card:focus-within {
   /* TODO #10: Add focus state for accessibility
-     
+
      When a card or its button has focus (Tab navigation):
      - Copy your hover transform and shadow effects
      - Add: outline: 3px solid #74b9ff; outline-offset: 2px;
-     
+
      This ensures keyboard users get visual feedback too.
   */
 }
 
 /* STEP 9: Experience the Complete System!
    =======================================
-   
+
    🎉 INTEGRATION TIME: Complete TODOs #1-10:
    1. Add comprehensive transitions to the base card
    2. Make the featured card stand out with scaling
@@ -317,7 +317,7 @@
    4. Design button interactions
    5. Add accessibility focus states
    6. Save and test!
-   
+
    🧪 TESTING CHECKLIST:
    - Hover over each card - do they feel interactive?
    - Tab through with keyboard - are focus states clear?
@@ -328,56 +328,59 @@
 
 /* EXPERIMENT ZONE! 🧪
    ====================
-   
+
    Now that you have a complete pricing system, try these refinements:
-   
+
    TODO #11: Different elevation levels for different plans
    Give each plan type a different hover elevation:
-   
+
    .basic-plan:hover { transform: translateY(-6px); }
    .pro-plan:hover { transform: translateY(-10px) scale(1.05); }
    .enterprise-plan:hover { transform: translateY(-8px); }
-   
+
    This creates subtle hierarchy even in hover states!
-   
+
    TODO #12: Color-coded hover effects
-   
-   .basic-plan:hover { border-color: #27ae60; } /* Green */
-   .pro-plan:hover { border-color: #74b9ff; }   /* Blue */
-   .enterprise-plan:hover { border-color: #8e44ad; } /* Purple */
-   
+
+   Green:
+   .basic-plan:hover { border-color: #27ae60; }
+   Blue:
+   .pro-plan:hover { border-color: #74b9ff; }
+   Purple:
+   .enterprise-plan:hover { border-color: #8e44ad; }
+
    TODO #13: Staggered card appearances (Advanced)
    Make cards fade in with different delays when the page loads:
-   
+
    .pricing-card { opacity: 0; animation: fadeInUp 0.6s ease forwards; }
    .basic-plan { animation-delay: 0.1s; }
    .pro-plan { animation-delay: 0.2s; }
    .enterprise-plan { animation-delay: 0.3s; }
-   
+
    @keyframes fadeInUp {
      from { opacity: 0; transform: translateY(30px); }
      to { opacity: 1; transform: translateY(0); }
    }
-   
+
    TODO #14: Plan comparison highlighting
    When hovering one card, slightly fade the others:
-   
+
    .pricing-card:not(:hover) { opacity: 0.7; }
-   
+
    This helps users focus on one option at a time!
 */
 
 /* STEP 10: Real-World Pricing Psychology
    ======================================
-   
+
    Your pricing interface now uses professional conversion techniques:
-   
+
    💰 ANCHORING: The enterprise plan makes Pro feel reasonable
    🎯 SOCIAL PROOF: "Most Popular" badge guides toward Pro
    📊 VISUAL HIERARCHY: Featured card stands out immediately
    ⚡ INTERACTION FEEDBACK: Smooth responses build trust
    🎨 ELEVATION METAPHOR: Cards feel "lifted" when considered
-   
+
    These exact patterns are used by:
    - Stripe (payment processing)
    - Slack (team communication)
@@ -388,21 +391,21 @@
 
 /* STEP 11: A/B Testing Considerations
    ===================================
-   
+
    In real projects, you'd test variations of:
-   
+
    🔍 FEATURED CARD SCALING:
    - No scaling vs. 1.05 vs. 1.1
    - Which converts better?
-   
+
    ⏱️ TRANSITION TIMING:
    - Fast (0.2s) vs. Medium (0.3s) vs. Slow (0.5s)
    - Which feels more trustworthy?
-   
+
    🎨 HOVER ELEVATION:
    - Subtle (-4px) vs. Medium (-8px) vs. Dramatic (-12px)
    - Which increases engagement?
-   
+
    🎯 BUTTON STYLES:
    - Solid vs. Gradient vs. Outline
    - Which drives more clicks?
@@ -410,27 +413,27 @@
 
 /* DEBUGGING SECTION 🔧
    =====================
-   
+
    Common pricing interface issues:
-   
+
    ❌ "My featured card doesn't stand out!"
    ✅ Check: Are you using both border-color and box-shadow?
       Is the scale transform applied to .featured?
-   
+
    ❌ "Hover effects feel inconsistent!"
    ✅ Ensure: All cards use the same transition timing and properties
-   
+
    ❌ "The buttons don't feel connected to the cards!"
    ✅ Try: Faster button transitions (0.2s) and coordinated colors
-   
+
    ❌ "Focus states are hard to see!"
    ✅ Check: Is the outline color contrasting enough?
       Try stronger colors like #0984e3
-   
+
    ❌ "The whole thing feels overwhelming!"
    ✅ Reduce: Animation durations and elevation distances
       Sometimes less is more
-   
+
    🎉 SUCCESS INDICATORS:
    - Pro plan clearly feels like the recommended choice
    - All interactions feel smooth and coordinated
@@ -441,25 +444,25 @@
 
 /* 🎉 CONGRATULATIONS!
    ===================
-   
+
    You've architected a professional-grade pricing interface!
-   
+
    You now understand:
    ✅ Visual hierarchy in business-critical interfaces
    ✅ Coordinating multiple interaction states
    ✅ Psychology of pricing presentation
    ✅ Accessibility in complex interactive systems
    ✅ Performance considerations for multi-element transitions
-   
+
    This pricing system demonstrates mastery of:
    - Complex state management
    - Business-focused design thinking
    - Accessibility integration
    - Performance-conscious implementation
-   
-   You've built something that could genuinely be used on a 
+
+   You've built something that could genuinely be used on a
    professional SaaS website to convert visitors into customers!
-   
-   Ready for some visual storytelling? Let's create an image 
+
+   Ready for some visual storytelling? Let's create an image
    gallery with cinematic hover effects! 📸✨
 */
