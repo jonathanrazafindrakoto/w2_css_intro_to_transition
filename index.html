@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transitions Playgrounds</title>
+
+    <!-- Import CSS files for each playground -->
+    <link rel="stylesheet" href="css/playground-1-responsive-button.css" />
+    <link rel="stylesheet" href="css/playground-2-form-highlights.css" />
+    <link rel="stylesheet" href="css/playground-3-card-effects.css" />
+    <link rel="stylesheet" href="css/playground-4-rainbow-cascade.css" />
+    <link rel="stylesheet" href="css/playground-5-pricing-selection.css" />
+    <link rel="stylesheet" href="css/playground-6-image-gallery.css" />
+    <link rel="stylesheet" href="css/playground-7-toast-notifications.css" />
+
+    <style>
+      /* General page styles */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .playground {
+        background: white;
+        border-radius: 15px;
+        margin: 2rem 0;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .playground h2 {
+        color: #333;
+        border-bottom: 3px solid #74b9ff;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .playground-description {
+        background: #f8f9ff;
+        padding: 1rem;
+        border-left: 4px solid #74b9ff;
+        margin-bottom: 2rem;
+        border-radius: 4px;
+      }
+
+      .interaction-area {
+        background: #f5f6fa;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 3rem;
+        text-align: center;
+        margin: 2rem 0;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .progress-indicator {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>⚡ CSS Transitions Playgrounds</h1>
+
+      <!-- Playground 1: Responsive Button -->
+      <section class="playground" id="playground-1">
+        <h2>Playground 1: The Responsive Button</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Basic CSS state selectors and the transition property</p>
+          <p><strong>Your mission:</strong> Transform a boring button into one that responds smoothly to user interaction!</p>
+          <p><strong>Key concepts:</strong> <code>:hover</code>, <code>:active</code>, <code>:focus</code> states and <code>transition</code> syntax</p>
+        </div>
+
+        <div class="interaction-area">
+          <button class="responsive-button">Click Me!</button>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Hover, click, and use Tab key to focus the button
+        </div>
+      </section>
+
+      <!-- Playground 2: Form Input Highlights -->
+      <section class="playground" id="playground-2">
+        <h2>Playground 2: Form Input Highlights</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Focus states and accessibility-friendly form design</p>
+          <p><strong>Your mission:</strong> Make form inputs that guide users with smooth visual feedback!</p>
+          <p><strong>Key concepts:</strong> <code>:focus</code> states, border transitions, and user experience</p>
+        </div>
+
+        <div class="interaction-area">
+          <form class="highlight-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-input" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-input" rows="4" placeholder="Tell us what you think..."></textarea>
+            </div>
+          </form>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Click into each input field and Tab between them
+        </div>
+      </section>
+
+      <!-- Playground 3: Card Hover Effects -->
+      <section class="playground" id="playground-3">
+        <h2>Playground 3: Interactive Cards</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Multi-property transitions and elevation effects</p>
+          <p><strong>Your mission:</strong> Create cards that feel alive when users interact with them!</p>
+          <p><strong>Key concepts:</strong> <code>transform</code>, <code>box-shadow</code>, and coordinated property changes</p>
+        </div>
+
+        <div class="interaction-area">
+          <div class="feature-card">
+            <div class="card-icon">🚀</div>
+            <h3>Fast Performance</h3>
+            <p>Lightning-fast load times and smooth interactions make users happy.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="card-icon">🎨</div>
+            <h3>Beautiful Design</h3>
+            <p>Carefully crafted interfaces that users love to interact with.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="card-icon">📱</div>
+            <h3>Mobile Friendly</h3>
+            <p>Responsive design that works perfectly on every device.</p>
+          </div>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Hover over each card and notice the smooth elevation
+        </div>
+      </section>
+
+      <!-- Playground 4: Rainbow Cascade -->
+      <section class="playground" id="playground-4">
+        <h2>Playground 4: The Rainbow Cascade</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Transition delays and coordinated animations</p>
+          <p><strong>Your mission:</strong> Create a rainbow that responds with a beautiful cascading wave effect!</p>
+          <p><strong>Key concepts:</strong> <code>transition-delay</code>, staggered timing, and creative effects</p>
+        </div>
+
+        <div class="interaction-area">
+          <div class="rainbow-container">
+            <div class="rainbow-stripe stripe-1"></div>
+            <div class="rainbow-stripe stripe-2"></div>
+            <div class="rainbow-stripe stripe-3"></div>
+            <div class="rainbow-stripe stripe-4"></div>
+            <div class="rainbow-stripe stripe-5"></div>
+            <div class="rainbow-stripe stripe-6"></div>
+            <div class="rainbow-stripe stripe-7"></div>
+          </div>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Hover over the rainbow and watch the cascading wave!
+        </div>
+      </section>
+
+      <!-- Playground 5: Pricing Card Selection -->
+      <section class="playground" id="playground-5">
+        <h2>Playground 5: Pricing Card Selection</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Complex state management and visual hierarchy</p>
+          <p><strong>Your mission:</strong> Build a pricing section with smooth selection states!</p>
+          <p><strong>Key concepts:</strong> Multiple transition properties, visual feedback, and user interaction patterns</p>
+        </div>
+
+        <div class="interaction-area">
+          <div class="pricing-card basic-plan">
+            <div class="plan-header">
+              <h3>Basic</h3>
+              <div class="price">$9<span>/month</span></div>
+            </div>
+            <ul class="features">
+              <li>5 Projects</li>
+              <li>10GB Storage</li>
+              <li>Email Support</li>
+            </ul>
+            <button class="select-plan">Choose Plan</button>
+          </div>
+
+          <div class="pricing-card pro-plan featured">
+            <div class="plan-badge">Most Popular</div>
+            <div class="plan-header">
+              <h3>Pro</h3>
+              <div class="price">$19<span>/month</span></div>
+            </div>
+            <ul class="features">
+              <li>25 Projects</li>
+              <li>100GB Storage</li>
+              <li>Priority Support</li>
+              <li>Advanced Analytics</li>
+            </ul>
+            <button class="select-plan">Choose Plan</button>
+          </div>
+
+          <div class="pricing-card enterprise-plan">
+            <div class="plan-header">
+              <h3>Enterprise</h3>
+              <div class="price">$49<span>/month</span></div>
+            </div>
+            <ul class="features">
+              <li>Unlimited Projects</li>
+              <li>1TB Storage</li>
+              <li>24/7 Phone Support</li>
+              <li>Custom Integrations</li>
+            </ul>
+            <button class="select-plan">Choose Plan</button>
+          </div>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Hover over pricing cards and click the buttons
+        </div>
+      </section>
+
+      <!-- Playground 6: Image Gallery -->
+      <section class="playground" id="playground-6">
+        <h2>Playground 6: Interactive Image Gallery</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Advanced transforms and overlay effects</p>
+          <p><strong>Your mission:</strong> Create a photo gallery with smooth zoom and reveal effects!</p>
+          <p><strong>Key concepts:</strong> <code>transform: scale()</code>, overlay transitions, and performance considerations</p>
+        </div>
+
+        <div class="interaction-area">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="image-placeholder mountain">
+                <div class="image-overlay">
+                  <h4>Mountain Peak</h4>
+                  <p>Breathtaking alpine views</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="image-placeholder ocean">
+                <div class="image-overlay">
+                  <h4>Ocean Waves</h4>
+                  <p>Peaceful coastal scenery</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="image-placeholder forest">
+                <div class="image-overlay">
+                  <h4>Dense Forest</h4>
+                  <p>Ancient woodland paths</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="gallery-item">
+              <div class="image-placeholder sunset">
+                <div class="image-overlay">
+                  <h4>Golden Sunset</h4>
+                  <p>Perfect evening light</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Hover over each image to see the zoom and text reveal
+        </div>
+      </section>
+
+      <!-- Playground 7: Toast Notifications -->
+      <section class="playground" id="playground-7">
+        <h2>Playground 7: Toast Notification System</h2>
+        <div class="playground-description">
+          <p><strong>What we're learning:</strong> Professional interaction patterns and entrance/exit animations</p>
+          <p><strong>Your mission:</strong> Build a notification system that feels polished and smooth!</p>
+          <p><strong>Key concepts:</strong> Complex state transitions, professional UI patterns, and user experience</p>
+        </div>
+
+        <div class="interaction-area">
+          <div class="notification-demo">
+            <button class="trigger-btn success-trigger">Show Success</button>
+            <button class="trigger-btn warning-trigger">Show Warning</button>
+            <button class="trigger-btn error-trigger">Show Error</button>
+          </div>
+          
+          <div class="toast-container">
+            <div class="toast-notification success-toast">
+              <div class="toast-icon">✅</div>
+              <div class="toast-content">
+                <div class="toast-title">Success!</div>
+                <div class="toast-message">Your changes have been saved successfully.</div>
+              </div>
+              <button class="toast-close">×</button>
+            </div>
+            
+            <div class="toast-notification warning-toast">
+              <div class="toast-icon">⚠️</div>
+              <div class="toast-content">
+                <div class="toast-title">Warning</div>
+                <div class="toast-message">Please review your input before continuing.</div>
+              </div>
+              <button class="toast-close">×</button>
+            </div>
+            
+            <div class="toast-notification error-toast">
+              <div class="toast-icon">❌</div>
+              <div class="toast-content">
+                <div class="toast-title">Error</div>
+                <div class="toast-message">Something went wrong. Please try again.</div>
+              </div>
+              <button class="toast-close">×</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="progress-indicator">
+          💡 <strong>Try:</strong> Click the buttons to show notifications, then hover and close them
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

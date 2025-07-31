@@ -1,0 +1,51 @@
+/* ===================================================
+   PLAYGROUND 1 SOLUTION: THE RESPONSIVE BUTTON
+   ===================================================
+   
+   This file contains the complete working solution with all 
+   TODOs implemented. All transitions and states are active.
+   
+   ================================================= */
+
+.responsive-button {
+  /* Visual styling */
+  background-color: #3498db;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  /* Layout */
+  margin: 10px;
+  
+  /* ✅ SOLUTION: Added smooth transitions for all properties */
+  transition: all 0.3s ease;
+}
+
+/* HOVER STATE: Mouse over the button */
+.responsive-button:hover {
+  /* ✅ SOLUTION: Color change on hover */
+  background-color: #2980b9;
+  
+  /* ✅ SOLUTION: Subtle scaling effect */
+  transform: scale(1.05);
+}
+
+/* ACTIVE STATE: Button being pressed */
+.responsive-button:active {
+  /* ✅ SOLUTION: Pressed scale effect */
+  transform: scale(0.98);
+  
+  /* ✅ SOLUTION: Darker pressed color */
+  background-color: #1f5f8b;
+}
+
+/* FOCUS STATE: Button focused with keyboard (accessibility!) */
+.responsive-button:focus {
+  /* ✅ SOLUTION: Accessibility highlighting */
+  outline: 3px solid #74b9ff;
+  outline-offset: 2px;
+}

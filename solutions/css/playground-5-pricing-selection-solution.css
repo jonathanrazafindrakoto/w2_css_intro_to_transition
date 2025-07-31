@@ -1,0 +1,174 @@
+/* ===================================================
+   PLAYGROUND 5 SOLUTION: PRICING CARD SELECTION
+   ===================================================
+   
+   This file contains the complete working solution with all 
+   TODOs implemented. All selection states and button effects are active.
+   
+   ================================================= */
+
+.pricing-card {
+  /* Layout and spacing */
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem;
+  max-width: 280px;
+  text-align: center;
+  position: relative;
+  
+  /* Subtle base shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* ✅ SOLUTION: Added comprehensive transitions */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-card.featured {
+  /* Make it more prominent */
+  border-color: #74b9ff;
+  box-shadow: 0 8px 16px rgba(116, 185, 255, 0.15);
+  
+  /* ✅ SOLUTION: Featured card is slightly larger */
+  transform: scale(1.05);
+}
+
+.plan-badge {
+  /* Position the "Most Popular" badge */
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Badge styling */
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  
+  /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(116, 185, 255, 0.3);
+}
+
+.plan-header h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #64748b;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.features li {
+  padding: 0.5rem 0;
+  color: #4a5568;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.pricing-card:hover {
+  /* ✅ SOLUTION: Elevation movement */
+  transform: translateY(-8px);
+  
+  /* ✅ SOLUTION: Elevated shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  
+  /* ✅ SOLUTION: Selection border hint */
+  border-color: #74b9ff;
+}
+
+.pricing-card.featured:hover {
+  /* ✅ SOLUTION: Featured card maintains scale + elevation */
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(116, 185, 255, 0.2);
+}
+
+.select-plan {
+  /* Button styling */
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  
+  /* Default button appearance */
+  background: #f8f9fa;
+  color: #495057;
+  
+  /* ✅ SOLUTION: Button transitions */
+  transition: all 0.2s ease;
+}
+
+/* Featured plan gets a special button */
+.featured .select-plan {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  box-shadow: 0 4px 8px rgba(116, 185, 255, 0.3);
+}
+
+.select-plan:hover {
+  /* ✅ SOLUTION: Regular button hover */
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.featured .select-plan:hover {
+  /* ✅ SOLUTION: Featured button hover */
+  background: linear-gradient(135deg, #0984e3, #74b9ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(116, 185, 255, 0.4);
+}
+
+.select-plan:active {
+  /* ✅ SOLUTION: Pressed states */
+  transform: translateY(0px);
+}
+
+/* ✅ SOLUTION: Focus states for accessibility */
+.pricing-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: #74b9ff;
+  outline: 3px solid #74b9ff;
+  outline-offset: 2px;
+}
+
+.pricing-card.featured:focus-within {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(116, 185, 255, 0.2);
+}
