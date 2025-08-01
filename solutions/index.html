@@ -352,37 +352,61 @@
 
         <div class="interaction-area">
           <div class="notification-demo">
-            <button class="trigger-btn success-trigger">Show Success</button>
-            <button class="trigger-btn warning-trigger">Show Warning</button>
-            <button class="trigger-btn error-trigger">Show Error</button>
+            <button
+              class="trigger-btn success-trigger"
+              onclick="document.getElementsByClassName('success-toast').item(0).classList.remove('toast-closed')">
+              Show Success
+            </button>
+            <button
+              class="trigger-btn warning-trigger"
+              onclick="document.getElementsByClassName('warning-toast').item(0).classList.remove('toast-closed')">
+              Show Warning
+            </button>
+            <button
+              class="trigger-btn error-trigger"
+              onclick="document.getElementsByClassName('error-toast').item(0).classList.remove('toast-closed')">
+              Show Error
+            </button>
           </div>
 
           <div class="toast-container">
-            <div class="toast-notification success-toast show">
+            <div class="toast-notification success-toast toast-closed">
               <div class="toast-icon">✅</div>
               <div class="toast-content">
                 <div class="toast-title">Success!</div>
                 <div class="toast-message">Your changes have been saved successfully.</div>
               </div>
-              <button class="toast-close">×</button>
+              <button
+                class="toast-close-button"
+                onclick="document.getElementsByClassName('success-toast').item(0).classList.add('toast-closed')">
+                ×
+              </button>
             </div>
 
-            <div class="toast-notification warning-toast show">
+            <div class="toast-notification warning-toast toast-closed">
               <div class="toast-icon">⚠️</div>
               <div class="toast-content">
                 <div class="toast-title">Warning</div>
                 <div class="toast-message">Please review your input before continuing.</div>
               </div>
-              <button class="toast-close">×</button>
+              <button
+                class="toast-close-button"
+                onclick="document.getElementsByClassName('warning-toast').item(0).classList.add('toast-closed')">
+                ×
+              </button>
             </div>
 
-            <div class="toast-notification error-toast show">
+            <div class="toast-notification error-toast toast-closed">
               <div class="toast-icon">❌</div>
               <div class="toast-content">
                 <div class="toast-title">Error</div>
                 <div class="toast-message">Something went wrong. Please try again.</div>
               </div>
-              <button class="toast-close">×</button>
+              <button
+                class="toast-close-button"
+                onclick="document.getElementsByClassName('error-toast').item(0).classList.add('toast-closed')">
+                ×
+              </button>
             </div>
           </div>
         </div>

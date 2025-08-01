@@ -33,18 +33,18 @@
 /* STEP 1: Understanding Toast Notification UX
    ===========================================
 
-   🔍 OBSERVE: Click the trigger buttons and watch the current notifications.
+   🔍 OBSERVE: Click the trigger buttons and watch the three toast notifications.
 
    Current problems:
-   - Notifications appear instantly (jarring)
+   - Notifications appear/disappear instantly (jarring)
    - No smooth entrance or exit animations
    - Hover states don't provide helpful feedback
    - Missing the polished feel of professional apps
 
    Professional toast systems solve this with:
-   - Smooth slide-in entrance from consistent direction
-   - Hover states that pause auto-dismiss timers
-   - Elegant exit animations when dismissed
+   - Smooth slide-in entrance when shown
+   - Elegant slide-out exit when hidden
+   - Hover states that provide interactive feedback
    - Consistent timing and easing across all message types
 */
 
@@ -86,9 +86,13 @@
   background: linear-gradient(135deg, #fd79a8, #e84393);
 }
 
-/* Set the toast to be hidden if it is closed */
-/* This positions them completely off-screen to the right. */
-.toast-closed {
+/* STEP 2: Initial Hidden State - The .toast-closed Class
+   ======================================================
+
+   When toasts have the .toast-closed class, they should be completely hidden.
+   This is the default state before being shown.
+*/
+.toast-notification.toast-closed {
   opacity: 0;
   transform: translateX(100%);
 }
@@ -134,10 +138,10 @@
 
   /* TODO #1: Add comprehensive transitions
 
-     We'll be animating multiple properties with different timing:
+     We'll be animating multiple properties for smooth show/hide:
      transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
-     All toast interactions should feel coordinated and smooth.
+     This allows smooth transitions between .toast-closed and visible states.
   */
 }
 
@@ -230,33 +234,35 @@
    =====================================
 
    🎯 GOAL: Design a complete state transition system that handles:
-   - Hidden → Visible (smooth entrance)
+   - .toast-closed → Visible (smooth entrance when class is removed)
    - Visible → Hovered (user interaction feedback)
-   - Visible → Hidden (smooth exit)
+   - Visible → .toast-closed (smooth exit when class is added)
 
    💡 TECHNIQUE HINTS:
-   - Use classes like .show and .hide to trigger state changes
-   - translateX() for horizontal sliding animations
-   - Opacity for fade effects
-   - Box-shadow changes for hover elevation
+   - Default state (.toast-closed): opacity: 0, translateX(100%)
+   - Visible state (no .toast-closed): opacity: 1, translateX(0)
+   - Hover state: enhanced box-shadow and subtle lift
+   - Use transitions to animate between these states
 
-   🔧 YOUR ARCHITECTURAL TASK: Design the complete notification lifecycle!
+   🔧 YOUR ARCHITECTURAL TASK: Design smooth show/hide animations!
 */
 
-/* STEP 7: Entrance Animation - The .show State
-   ============================================
+/* STEP 7: Visible State - When .toast-closed is Removed
+   =====================================================
 
-   When a notification becomes visible, it should slide in smoothly.
+   When the .toast-closed class is removed, toasts should be visible and positioned.
+   Since .toast-closed sets opacity: 0 and translateX(100%), the visible state
+   should reset these properties to show the toast normally.
 */
 
-.toast-notification.show {
-  /* TODO #4: Design the entrance animation
+.toast-notification {
+  /* TODO #4: Set the visible state properties
 
-     When notifications receive the .show class, they should:
-     - Become fully visible: opacity: 1;
-     - Slide into position: transform: translateX(0);
+     When .toast-closed is removed, toasts should be:
+     - Fully visible: opacity: 1;
+     - In normal position: transform: translateX(0);
 
-     This creates a smooth slide-in from the right edge.
+     Combined with transitions, this creates smooth slide-in from the right.
   */
 }
 
@@ -277,45 +283,36 @@
   */
 }
 
-/* STEP 9: Exit Animation - The .hide State
-   ========================================
+/* STEP 9: Hidden State - The .toast-closed Class (Already Defined Above)
+   ======================================================================
 
-   When notifications are dismissed, they should exit gracefully.
+   When notifications receive the .toast-closed class, they exit gracefully.
+   We already defined this in STEP 2:
+   - Fade out: opacity: 0;
+   - Slide out to the right: transform: translateX(100%);
+
+   Combined with transitions, this creates smooth slide-out animation.
 */
-
-.toast-notification.hide {
-  /* TODO #6: Design the exit animation
-
-     When notifications receive the .hide class:
-     - Fade out: opacity: 0;
-     - Slide out to the right: transform: translateX(100%);
-
-     This mirrors the entrance but in reverse.
-  */
-}
 
 /* STEP 10: Experience the Complete System!
    ========================================
 
-   🎉 SYSTEM INTEGRATION TIME: Complete TODOs #1-7:
-   1. Set initial hidden state (opacity 0, translateX 100%)
-   2. Add comprehensive transitions
-   3. Add close button transitions
-   4. Style close button hover
-   5. Design entrance animation (.show class)
-   6. Design hover elevation
-   7. Design exit animation (.hide class)
-   8. Save and test!
+   🎉 SYSTEM INTEGRATION TIME: Complete TODOs #1-6:
+   1. Add comprehensive transitions to .toast-notification
+   2. Add close button transitions
+   3. Style close button hover
+   4. Set visible state properties (opacity: 1, translateX: 0)
+   5. Design hover elevation
+   6. Save and test!
 
    🧪 TESTING THE COMPLETE LIFECYCLE:
-   - Click trigger buttons - do notifications slide in smoothly?
-   - Hover over notifications - do they feel interactive?
-   - Click close buttons - do they exit gracefully?
-   - Try triggering multiple notifications - do they stack nicely?
+   - Click trigger buttons - do notifications slide in smoothly from the right?
+   - Hover over notifications - do they feel interactive with elevation?
+   - Click close buttons - do they slide out gracefully to the right?
+   - All three notification types should behave consistently!
 
-   Note: Since we don't have JavaScript, you'll need to manually add
-   the .show class to see the entrance effect. In a real app,
-   JavaScript would manage these state classes automatically.
+   The JavaScript in the HTML handles adding/removing the .toast-closed class
+   when you click the trigger and close buttons.
 */
 
 /* STEP 11: Advanced Professional Patterns
@@ -328,7 +325,7 @@
 
    Some toast systems show a progress bar indicating auto-dismiss timing:
 
-   .toast-notification::after {
+   .toast-notification:not(.toast-closed)::after {
      content: '';
      position: absolute;
      bottom: 0;
@@ -341,11 +338,11 @@
      transition: transform 5s linear;
    }
 
-   .toast-notification.show::after {
-     transform: scaleX(1);
+   .toast-notification:not(.toast-closed):hover::after {
+     animation-play-state: paused;
    }
 
-   This creates a progress bar that fills over 5 seconds!
+   This creates a progress bar that fills over 5 seconds when visible!
 */
 
 /* TODO #8: Stacked notification spacing (Advanced)
@@ -368,17 +365,14 @@
 
    Try different entrance animations for variety:
 
-   SUCCESS (slide from right):
-   .success-toast { transform: translateX(100%); }
-   .success-toast.show { transform: translateX(0); }
+   SUCCESS (slide from right - default):
+   .success-toast.toast-closed { transform: translateX(100%); }
 
    WARNING (slide from top):
-   .warning-toast { transform: translateY(-100%); }
-   .warning-toast.show { transform: translateY(0); }
+   .warning-toast.toast-closed { transform: translateY(-100%); }
 
    ERROR (scale from center):
-   .error-toast { transform: scale(0.8); }
-   .error-toast.show { transform: scale(1); }
+   .error-toast.toast-closed { transform: scale(0.8); opacity: 0; }
 */
 
 /* EXPERIMENT ZONE! 🧪
@@ -480,7 +474,7 @@
        transition: opacity 0.2s ease;
      }
 
-     .toast-notification.show {
+     .toast-notification:not(.toast-closed) {
        opacity: 1;
        transform: none;
      }
@@ -498,8 +492,8 @@
    Common toast notification issues:
 
    ❌ "My notifications don't slide in!"
-   ✅ Check: Are you applying the .show class? Is the initial
-      transform set correctly?
+   ✅ Check: Are you removing the .toast-closed class? Is the initial
+      hidden state (opacity: 0, translateX: 100%) set correctly?
 
    ❌ "Animations feel choppy or laggy!"
    ✅ Try: Shorter transition durations (0.2s) or use transform

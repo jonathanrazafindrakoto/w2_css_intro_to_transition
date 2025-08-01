@@ -1,10 +1,10 @@
 /* ===================================================
    PLAYGROUND 7 SOLUTION: TOAST NOTIFICATION SYSTEM
    ===================================================
-   
-   This file contains the complete working solution with all 
+
+   This file contains the complete working solution with all
    TODOs implemented. All notification states and transitions are active.
-   
+
    ================================================= */
 
 .notification-demo {
@@ -37,6 +37,12 @@
 
 .trigger-btn.error-trigger {
   background: linear-gradient(135deg, #fd79a8, #e84393);
+}
+
+/* ✅ SOLUTION: Hidden state - when .toast-closed class is present */
+.toast-notification.toast-closed {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .toast-container {
@@ -72,11 +78,11 @@
   /* Re-enable pointer events for individual notifications */
   pointer-events: auto;
 
-  /* ✅ SOLUTION: Initial hidden state */
-  opacity: 0;
-  transform: translateX(100%);
+  /* ✅ SOLUTION: Visible state - when .toast-closed is NOT present */
+  opacity: 1;
+  transform: translateX(0);
 
-  /* ✅ SOLUTION: Comprehensive transitions */
+  /* ✅ SOLUTION: Comprehensive transitions for smooth show/hide */
   transition:
     opacity 0.3s ease,
     transform 0.3s ease,
@@ -106,7 +112,7 @@
   margin: 0;
 }
 
-.toast-close {
+.toast-close-button {
   background: none;
   border: none;
   font-size: 1.2rem;
@@ -122,7 +128,7 @@
     background-color 0.2s ease;
 }
 
-.toast-close:hover {
+.toast-close-button:hover {
   /* ✅ SOLUTION: Close button hover styling */
   color: #64748b;
   background-color: #f1f5f9;
@@ -153,20 +159,33 @@
   color: #e74c3c;
 }
 
-/* ✅ SOLUTION: Show state - entrance animation */
-.toast-notification.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 /* ✅ SOLUTION: Hover interaction - enhanced feedback */
 .toast-notification:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
-/* ✅ SOLUTION: Hide state - exit animation */
-.toast-notification.hide {
-  opacity: 0;
-  transform: translateX(100%);
-}
+/*
+   STATE MANAGEMENT EXPLANATION:
+   =============================
+
+   The solution uses a two-state system:
+
+   1. HIDDEN STATE (.toast-closed present):
+      - opacity: 0
+      - transform: translateX(100%)
+      - Toast is completely off-screen to the right
+
+   2. VISIBLE STATE (.toast-closed removed):
+      - opacity: 1
+      - transform: translateX(0)
+      - Toast is fully visible in normal position
+
+   TRANSITIONS:
+   - When .toast-closed is added: smooth slide out to right
+   - When .toast-closed is removed: smooth slide in from right
+   - Hover state: elevation effect with enhanced shadow
+
+   JavaScript in HTML handles adding/removing .toast-closed class
+   when trigger and close buttons are clicked.
+*/
