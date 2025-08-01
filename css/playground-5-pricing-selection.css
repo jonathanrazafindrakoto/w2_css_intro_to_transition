@@ -11,9 +11,6 @@
    purchasing decisions. They should feel trustworthy, highlight the
    best option, and provide clear feedback for every interaction.
 
-   This is REAL e-commerce psychology - the difference between
-   users bouncing away confused or converting into customers.
-
    🎯 LEARNING GOALS:
    - Design complete interaction systems with multiple states
    - Understand visual hierarchy in pricing interfaces
@@ -26,25 +23,7 @@
 
    ================================================= */
 
-/* STEP 1: Understanding Pricing Psychology
-   ========================================
-
-   🔍 OBSERVE: Look at the pricing cards in your browser.
-
-   Current problems:
-   - All cards look equally important (no hierarchy)
-   - No clear feedback when hovering or focusing
-   - Featured plan doesn't stand out enough
-   - Buttons feel disconnected from the card experience
-
-   Professional pricing pages solve this with:
-   - Clear visual hierarchy (featured plan stands out)
-   - Smooth hover feedback (cards feel interactive)
-   - Strong call-to-action buttons (build purchase confidence)
-   - Coordinated transitions (everything feels connected)
-*/
-
-/* STEP 2: Base Card Structure
+/* STEP 1: Base Card Structure
    ===========================
 
    Each pricing card needs to work as a cohesive unit where every
@@ -77,7 +56,7 @@
   */
 }
 
-/* STEP 3: Featured Plan Hierarchy
+/* STEP 2: Featured Plan Hierarchy
    ===============================
 
    The "Pro" plan should immediately stand out as the recommended option.
@@ -119,7 +98,7 @@
   box-shadow: 0 4px 8px rgba(116, 185, 255, 0.3);
 }
 
-/* STEP 4: Typography and Content Hierarchy
+/* STEP 3: Typography and Content Hierarchy
    ========================================
 
    Clear typography hierarchy helps users quickly scan and compare options.
@@ -168,7 +147,7 @@
   font-weight: bold;
 }
 
-/* STEP 5: The Hover Challenge - Card Elevation
+/* STEP 4: The Hover Challenge - Card Elevation
    ============================================
 
    🎯 GOAL: When users hover over any pricing card, it should feel
@@ -210,7 +189,7 @@
   */
 }
 
-/* STEP 6: Featured Card Special Hover State
+/* STEP 5: Featured Card Special Hover State
    =========================================
 
    The featured card should maintain its prominence while still responding to hover.
@@ -229,7 +208,7 @@
   */
 }
 
-/* STEP 7: Button Integration
+/* STEP 6: Button Integration
    ==========================
 
    The buttons should feel connected to the card experience, not separate.
@@ -290,7 +269,7 @@
   */
 }
 
-/* STEP 8: Focus States for Accessibility
+/* STEP 7: Focus States for Accessibility
    ======================================
 
    Keyboard users should get the same great experience as mouse users.
@@ -307,7 +286,7 @@
   */
 }
 
-/* STEP 9: Experience the Complete System!
+/* STEP 8: Experience the Complete System!
    =======================================
 
    🎉 INTEGRATION TIME: Complete TODOs #1-10:
@@ -334,7 +313,7 @@
    TODO #11: Different elevation levels for different plans
    Give each plan type a different hover elevation:
 
-   .basic-plan:hover { transform: translateY(-6px); }
+
    .pro-plan:hover { transform: translateY(-10px) scale(1.05); }
    .enterprise-plan:hover { transform: translateY(-8px); }
 
@@ -370,26 +349,7 @@
    This helps users focus on one option at a time!
 */
 
-/* STEP 10: Real-World Pricing Psychology
-   ======================================
-
-   Your pricing interface now uses professional conversion techniques:
-
-   💰 ANCHORING: The enterprise plan makes Pro feel reasonable
-   🎯 SOCIAL PROOF: "Most Popular" badge guides toward Pro
-   📊 VISUAL HIERARCHY: Featured card stands out immediately
-   ⚡ INTERACTION FEEDBACK: Smooth responses build trust
-   🎨 ELEVATION METAPHOR: Cards feel "lifted" when considered
-
-   These exact patterns are used by:
-   - Stripe (payment processing)
-   - Slack (team communication)
-   - Figma (design tools)
-   - Netflix (subscription tiers)
-   - GitHub (developer plans)
-*/
-
-/* STEP 11: A/B Testing Considerations
+/* STEP 9: A/B Testing Considerations
    ===================================
 
    In real projects, you'd test variations of:
@@ -450,7 +410,6 @@
    You now understand:
    ✅ Visual hierarchy in business-critical interfaces
    ✅ Coordinating multiple interaction states
-   ✅ Psychology of pricing presentation
    ✅ Accessibility in complex interactive systems
    ✅ Performance considerations for multi-element transitions
 

@@ -1,51 +1,51 @@
 /* ===================================================
    PLAYGROUND 3: INTERACTIVE CARDS
    ===================================================
-   
-   Welcome to the next level! You now understand state 
-   selectors and basic transitions. Time to combine multiple 
+
+   Welcome to the next level! You now understand state
+   selectors and basic transitions. Time to combine multiple
    properties for sophisticated interactions.
-   
+
    🎯 THE CHALLENGE:
-   These feature cards look fine, but they feel FLAT and 
+   These feature cards look fine, but they feel FLAT and
    LIFELESS. Users can't tell they're interactive.
-   
-   Professional websites make cards feel like they're floating 
-   above the page and responding to user attention. You're going 
-   to learn the elevation and depth techniques that make modern 
+
+   Professional websites make cards feel like they're floating
+   above the page and responding to user attention. You're going
+   to learn the elevation and depth techniques that make modern
    interfaces feel magical!
-   
+
    🎯 LEARNING GOALS:
    - Coordinate multiple property transitions
-   - Master transform and box-shadow techniques  
+   - Master transform and box-shadow techniques
    - Create depth and elevation effects
    - Build professional card interaction patterns
-   
+
    📝 YOUR MISSION:
-   Transform these static cards into interactive elements that 
+   Transform these static cards into interactive elements that
    users will WANT to click!
-   
+
    ================================================= */
 
 /* STEP 1: Understanding the Current Problem
    =========================================
-   
+
    🔍 OBSERVE: Look at the cards in your browser and try hovering over them.
-   
+
    What's wrong?
    - They feel flat against the background
-   - No feedback when you hover  
+   - No feedback when you hover
    - Users can't tell they're clickable
    - They look like static content, not interactive elements
-   
-   Professional card interfaces solve this with ELEVATION - making 
-   cards feel like they're floating above the page and responding 
+
+   Professional card interfaces solve this with ELEVATION - making
+   cards feel like they're floating above the page and responding
    to user attention.
 */
 
 /* STEP 2: Base Card Styling
    =========================
-   
+
    First, let's examine the current card structure.
    Notice: Clean, professional, but completely static.
 */
@@ -66,14 +66,14 @@
   cursor: pointer;
 
   /* TODO #1: Add your transition here!
-     
+
      We'll be animating multiple properties:
      - transform (for subtle movement and scaling)
      - box-shadow (for elevation effects)
-     
+
      Add this line after the cursor property:
      transition: transform 0.3s ease, box-shadow 0.3s ease;
-     
+
      Notice we're being specific about which properties to animate
      instead of using "all". This gives us more control and better performance.
   */
@@ -99,36 +99,36 @@
 
 /* STEP 3: The Hover Challenge - Create Elevation!
    ===============================================
-   
+
    Here's your first problem-solving challenge!
-   
+
    🎯 GOAL: Make cards feel like they "lift off" the page when hovered.
-   
+
    💡 TECHNIQUE HINTS:
    - transform: translateY() moves elements up/down
    - Negative values move UP: translateY(-8px)
    - box-shadow creates depth - bigger shadows = higher elevation
    - Scale can make elements feel more prominent: scale(1.02)
-   
+
    🔧 YOUR TASK: Complete the hover state below!
 */
 
 .feature-card:hover {
   /* TODO #2: Add elevation movement
-     
+
      Make the card "lift" by moving it up slightly.
      Try: transform: translateY(-8px);
-     
+
      This creates the illusion that the card is rising toward the user!
   */
 
   /* TODO #3: Add elevation shadow
-     
-     Create a bigger, more dramatic shadow to simulate the card 
+
+     Create a bigger, more dramatic shadow to simulate the card
      being higher above the page.
-     
+
      Try: box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-     
+
      Compare this to the original: 0 2px 8px rgba(0, 0, 0, 0.1)
      - Bigger Y offset (12px vs 2px) = higher elevation
      - Bigger blur (24px vs 8px) = softer, more realistic shadow
@@ -136,57 +136,57 @@
   */
 
   /* TODO #4: Optional - Add subtle scaling
-     
-     If you want the card to feel even more prominent, you can 
+
+     If you want the card to feel even more prominent, you can
      combine the translateY with a gentle scale:
-     
+
      Try: transform: translateY(-8px) scale(1.02);
-     
+
      This makes the card slightly larger AND higher - very engaging!
   */
 }
 
 /* STEP 4: Experience the Magic!
    =============================
-   
+
    🎉 TESTING TIME: Complete TODOs #1-3 (and optionally #4):
    1. Add the transition to the base .feature-card
    2. Add the translateY movement to :hover
    3. Add the elevated shadow to :hover
    4. Save and test!
-   
+
    🤔 REFLECTION QUESTIONS:
    - How does the elevation change make you feel about the cards?
    - Can you imagine these cards on a professional website now?
    - Do they feel more clickable and engaging?
-   
+
    This is the EXACT technique used by:
    - Product cards on e-commerce sites
-   - Feature sections on SaaS websites  
+   - Feature sections on SaaS websites
    - Portfolio pieces on design sites
    - Social media post cards
 */
 
 /* STEP 5: Understanding the Science of Depth
    ==========================================
-   
+
    Why does this elevation effect work so well psychologically?
-   
+
    🧠 HUMAN PERCEPTION:
    - Our brains interpret shadows as depth indicators
    - Movement toward us feels like attention and importance
    - Interactive elements that respond feel "alive" and trustworthy
-   
+
    📐 SHADOW ANATOMY:
    box-shadow: offset-x offset-y blur-radius spread-radius color;
-   
+
    For elevation effects:
    - offset-x: Usually 0 (no horizontal offset)
-   - offset-y: Positive value (shadow below the element)  
+   - offset-y: Positive value (shadow below the element)
    - blur-radius: Larger = higher elevation
    - spread-radius: Usually 0 or small positive
    - color: Semi-transparent black or dark gray
-   
+
    🎨 ELEVATION SCALE (Material Design inspired):
    - Level 1: 0 2px 4px rgba(0,0,0,0.1)   (resting)
    - Level 2: 0 4px 8px rgba(0,0,0,0.12)  (slightly raised)
@@ -196,155 +196,140 @@
 
 /* EXPERIMENT ZONE! 🧪
    ====================
-   
+
    Now that you have the basics working, try these variations:
-   
+
    TODO #5: Different elevation distances
    Try these translateY values in your :hover state:
    - translateY(-4px)  (subtle lift)
    - translateY(-12px) (dramatic lift)
    - translateY(-2px)  (very subtle)
-   
+
    Which feels most appropriate for feature cards?
-   
+
    TODO #6: Different shadow intensities
    Try these box-shadow values:
    - box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);  (very subtle)
    - box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);  (dramatic)
    - box-shadow: 0 12px 24px rgba(52, 152, 219, 0.1); (colored shadow)
-   
+
    TODO #7: Combine with scaling
    Try these transform combinations:
    - transform: translateY(-8px) scale(1.05);  (more prominent)
    - transform: translateY(-6px) scale(0.98);  (moves up but shrinks - weird?)
    - transform: translateY(-10px) rotate(1deg); (playful tilt)
-   
+
    TODO #8: Different transition timings
    - transition: transform 0.2s ease, box-shadow 0.2s ease; (snappy)
    - transition: transform 0.5s ease, box-shadow 0.5s ease; (slow)
    - transition: transform 0.3s ease-out, box-shadow 0.4s ease; (different speeds)
-   
+
    TODO #9: Staggered property timing
    Try animating different properties at different speeds:
    - transition: transform 0.2s ease, box-shadow 0.4s ease;
-   
-   This creates a more organic feeling where the movement happens 
+
+   This creates a more organic feeling where the movement happens
    first, then the shadow catches up!
 */
 
 /* STEP 6: Advanced Card Patterns
    ==============================
-   
+
    Want to get even more sophisticated? Try these professional patterns:
 */
 
 /* TODO #10: Content reveal on hover (Advanced)
-   
+
    Some cards reveal additional content or change text color on hover.
    Try adding this to your :hover state:
-   
+
    .feature-card:hover h3 { color: #74b9ff; }
    .feature-card:hover p { color: #2c3e50; }
-   
+
    This creates a subtle color shift that adds richness to the interaction.
 */
 
 /* TODO #11: Icon animation (Advanced)
-   
+
    You can make the icons respond too!
    Try adding:
-   
+
    .feature-card:hover .card-icon {
      transform: scale(1.1);
      transition: transform 0.3s ease;
    }
-   
+
    This makes the icon grow slightly when the card is hovered.
+   Uh oh, notice that the transition happens only when hovering and not when exiting?
+   Can you figure out how to fix it?
 */
 
 /* STEP 7: Real-World Card Patterns
    ================================
-   
+
    These exact techniques appear everywhere in professional web design:
-   
+
    🛒 E-COMMERCE PRODUCT CARDS:
    - Subtle elevation on hover builds purchase confidence
    - Often combined with "Add to Cart" button reveals
    - Shadow colors sometimes match brand colors
-   
+
    💼 PORTFOLIO & CASE STUDY CARDS:
    - Strong elevation effects to showcase work quality
    - Often combined with image scaling or overlays
    - Longer transition durations for premium feel
-   
+
    📰 BLOG POST & ARTICLE CARDS:
    - Gentle elevation to encourage reading
    - Often combined with subtle color changes
    - Accessibility-friendly focus states mirror hover states
-   
+
    🎯 FEATURE & SERVICE CARDS:
    - Medium elevation to show interactivity
    - Often part of pricing or feature comparison layouts
    - Consistent with button and form transitions on the same site
 */
 
-/* STEP 8: Accessibility Considerations
-   ====================================
-   
-   Great card interactions work for everyone:
-*/
-
-/* Focus states should mirror hover states for keyboard users */
-.feature-card:focus {
-  /* TODO #12: Add focus state (copy your hover styles)
-     
-     Keyboard users should get the same visual feedback as mouse users.
-     Copy your :hover styles here, and add:
-     outline: 3px solid #74b9ff;
-     outline-offset: 2px;
-  */
-}
-
-/* STEP 9: Performance Notes 💡
+/* STEP 8: Performance Notes 💡
    =============================
-   
+
    EFFICIENT PROPERTIES: transform and opacity are GPU-accelerated
-   and perform well. box-shadow is slightly more expensive but 
+   and perform well. box-shadow is slightly more expensive but
    usually fine for hover effects.
-   
+
    AVOID ANIMATING: width, height, top, left, margin, padding.
    These cause layout recalculation and can be janky.
-   
-   TIMING SWEET SPOT: 0.2s-0.4s feels responsive without being 
+
+   TIMING SWEET SPOT: 0.2s-0.4s feels responsive without being
    distracting. Longer durations can feel sluggish.
-   
+
    MOBILE CONSIDERATIONS: Touch devices don't have hover states.
-   Consider adding :active states or making cards always slightly 
+   Consider adding :active states or making cards always slightly
    elevated on mobile.
 */
 
 /* DEBUGGING SECTION 🔧
    =====================
-   
+
    Common card interaction issues:
-   
+
    ❌ "My cards don't animate smoothly!"
-   ✅ Check: Is the transition on the base element (.feature-card), 
+   ✅ Check: Is the transition on the base element (.feature-card),
       not the :hover state?
-   
+
    ❌ "The shadow looks harsh or unrealistic!"
    ✅ Try: Lower opacity values (0.1-0.15) and larger blur radius
-   
+
    ❌ "The movement feels too dramatic!"
    ✅ Try: Smaller translateY values (-4px to -8px work well)
-   
+
    ❌ "Cards feel slow or laggy!"
    ✅ Try: Shorter transition durations (0.2s) or animate fewer properties
-   
+
    ❌ "The effect doesn't feel polished!"
    ✅ Check: Are you combining multiple properties (transform + shadow)?
       Single-property changes often feel incomplete.
-   
+
    🎉 SUCCESS INDICATORS:
    - Cards feel alive and responsive to user attention
    - Elevation effect creates clear depth perception
@@ -352,31 +337,30 @@
    - Users naturally understand the cards are interactive
 */
 
-/* 🎉 CONGRATULATIONS!  
+/* 🎉 CONGRATULATIONS!
    ===================
-   
-   You've mastered one of the most important interaction patterns 
+
+   You've mastered one of the most important interaction patterns
    in modern web design!
-   
+
    You now understand:
    ✅ How to create depth and elevation with shadows
    ✅ Using transform properties for smooth movement
    ✅ Coordinating multiple property transitions
-   ✅ The psychology behind effective hover states
    ✅ Professional card interaction patterns
-   
+
    These cards now feel:
    - Interactive and engaging
-   - Professional and polished  
+   - Professional and polished
    - Smooth and responsive
    - Inviting to click and explore
-   
+
    You've learned techniques used by every major website:
    - Airbnb property cards
    - Dribbble portfolio pieces
    - Stripe product features
    - GitHub repository cards
-   
-   Ready for something completely different? Let's create a 
+
+   Ready for something completely different? Let's create a
    beautiful rainbow cascade effect! 🌈✨
 */

@@ -1,46 +1,46 @@
 /* ===================================================
    PLAYGROUND 7: TOAST NOTIFICATION SYSTEM
    ===================================================
-   
-   🎉 Welcome to the final challenge! You've mastered individual 
-   transitions, coordinated effects, and sophisticated interactions. 
-   Now you'll architect a complete notification system with complex 
+
+   🎉 Welcome to the final challenge! You've mastered individual
+   transitions, coordinated effects, and sophisticated interactions.
+   Now you'll architect a complete notification system with complex
    state management.
-   
+
    🍞 THE PROFESSIONAL CHALLENGE:
-   Toast notifications are everywhere in modern applications - 
+   Toast notifications are everywhere in modern applications -
    success messages, error alerts, system updates. They must:
    - Enter smoothly without jarring the user
    - Provide clear visual hierarchy for different message types
    - Respond elegantly to user interaction
    - Exit gracefully when dismissed
-   
-   This is the kind of system that separates amateur websites from 
+
+   This is the kind of system that separates amateur websites from
    professional applications!
-   
+
    🎯 LEARNING GOALS:
    - Design complete state transition systems
    - Master entrance and exit animation patterns
    - Coordinate multiple notification types with consistent timing
    - Build production-ready UI component interactions
-   
+
    📝 YOUR FINAL MISSION:
-   Create a notification system that feels as polished as the 
+   Create a notification system that feels as polished as the
    apps users interact with every day!
-   
+
    ================================================= */
 
 /* STEP 1: Understanding Toast Notification UX
    ===========================================
-   
+
    🔍 OBSERVE: Click the trigger buttons and watch the current notifications.
-   
+
    Current problems:
    - Notifications appear instantly (jarring)
    - No smooth entrance or exit animations
    - Hover states don't provide helpful feedback
    - Missing the polished feel of professional apps
-   
+
    Professional toast systems solve this with:
    - Smooth slide-in entrance from consistent direction
    - Hover states that pause auto-dismiss timers
@@ -50,7 +50,7 @@
 
 /* STEP 2: Notification Container System
    =====================================
-   
+
    The container positions notifications in a consistent location.
 */
 
@@ -86,6 +86,13 @@
   background: linear-gradient(135deg, #fd79a8, #e84393);
 }
 
+/* Set the toast to be hidden if it is closed */
+/* This positions them completely off-screen to the right. */
+.toast-closed {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
 .toast-container {
   position: fixed;
   top: 20px;
@@ -103,7 +110,7 @@
 
 /* STEP 3: Base Toast Notification Structure
    =========================================
-   
+
    Each notification needs to work as a cohesive interactive unit.
 */
 
@@ -125,27 +132,18 @@
   /* Re-enable pointer events for individual notifications */
   pointer-events: auto;
 
-  /* TODO #1: Set initial hidden state
-     
-     Notifications should start hidden and slide in from the right:
-     opacity: 0;
-     transform: translateX(100%);
-     
-     This positions them completely off-screen to the right.
-  */
+  /* TODO #1: Add comprehensive transitions
 
-  /* TODO #2: Add comprehensive transitions
-     
      We'll be animating multiple properties with different timing:
      transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-     
+
      All toast interactions should feel coordinated and smooth.
   */
 }
 
 /* STEP 4: Toast Content Structure
    ===============================
-   
+
    Clean typography hierarchy for scannable content.
 */
 
@@ -172,7 +170,7 @@
   margin: 0;
 }
 
-.toast-close {
+.toast-close-button {
   background: none;
   border: none;
   font-size: 1.2rem;
@@ -182,16 +180,16 @@
   border-radius: 4px;
   flex-shrink: 0;
 
-  /* TODO #3: Add close button transition
-     
+  /* TODO #2: Add close button transition
+
      The close button should respond smoothly to interaction:
      transition: color 0.2s ease, background-color 0.2s ease;
   */
 }
 
-.toast-close:hover {
-  /* TODO #4: Style close button hover
-     
+.toast-close-button:hover {
+  /* TODO #3: Style close button hover
+
      Make the close button more prominent on hover:
      color: #64748b;
      background-color: #f1f5f9;
@@ -200,7 +198,7 @@
 
 /* STEP 5: Toast Type Styling
    ==========================
-   
+
    Different message types get different visual treatment.
 */
 
@@ -230,75 +228,75 @@
 
 /* STEP 6: The State Management Challenge
    =====================================
-   
+
    🎯 GOAL: Design a complete state transition system that handles:
    - Hidden → Visible (smooth entrance)
    - Visible → Hovered (user interaction feedback)
    - Visible → Hidden (smooth exit)
-   
+
    💡 TECHNIQUE HINTS:
    - Use classes like .show and .hide to trigger state changes
    - translateX() for horizontal sliding animations
    - Opacity for fade effects
    - Box-shadow changes for hover elevation
-   
+
    🔧 YOUR ARCHITECTURAL TASK: Design the complete notification lifecycle!
 */
 
 /* STEP 7: Entrance Animation - The .show State
    ============================================
-   
+
    When a notification becomes visible, it should slide in smoothly.
 */
 
 .toast-notification.show {
-  /* TODO #5: Design the entrance animation
-     
+  /* TODO #4: Design the entrance animation
+
      When notifications receive the .show class, they should:
      - Become fully visible: opacity: 1;
      - Slide into position: transform: translateX(0);
-     
+
      This creates a smooth slide-in from the right edge.
   */
 }
 
 /* STEP 8: Hover Interaction - Enhanced Feedback
    =============================================
-   
+
    Professional toast notifications respond to hover with elevation and timing cues.
 */
 
 .toast-notification:hover {
-  /* TODO #6: Design hover elevation
-     
+  /* TODO #5: Design hover elevation
+
      When users hover over notifications:
      - Add elevation: box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
      - Optional subtle lift: transform: translateY(-2px);
-     
+
      This provides feedback that the notification is interactive.
   */
 }
 
 /* STEP 9: Exit Animation - The .hide State
    ========================================
-   
+
    When notifications are dismissed, they should exit gracefully.
 */
 
 .toast-notification.hide {
-  /* TODO #7: Design the exit animation
-     
+  /* TODO #6: Design the exit animation
+
      When notifications receive the .hide class:
      - Fade out: opacity: 0;
      - Slide out to the right: transform: translateX(100%);
-     
+
      This mirrors the entrance but in reverse.
   */
 }
 
 /* STEP 10: Experience the Complete System!
    ========================================
-   
+
    🎉 SYSTEM INTEGRATION TIME: Complete TODOs #1-7:
    1. Set initial hidden state (opacity 0, translateX 100%)
    2. Add comprehensive transitions
@@ -308,28 +306,28 @@
    6. Design hover elevation
    7. Design exit animation (.hide class)
    8. Save and test!
-   
+
    🧪 TESTING THE COMPLETE LIFECYCLE:
    - Click trigger buttons - do notifications slide in smoothly?
    - Hover over notifications - do they feel interactive?
    - Click close buttons - do they exit gracefully?
    - Try triggering multiple notifications - do they stack nicely?
-   
-   Note: Since we don't have JavaScript, you'll need to manually add 
-   the .show class to see the entrance effect. In a real app, 
+
+   Note: Since we don't have JavaScript, you'll need to manually add
+   the .show class to see the entrance effect. In a real app,
    JavaScript would manage these state classes automatically.
 */
 
 /* STEP 11: Advanced Professional Patterns
    =======================================
-   
+
    Want to match production-quality notification systems?
 */
 
-/* TODO #8: Auto-dismiss timing indication (Advanced)
-   
+/* TODO #7: Auto-dismiss timing indication (Advanced)
+
    Some toast systems show a progress bar indicating auto-dismiss timing:
-   
+
    .toast-notification::after {
      content: '';
      position: absolute;
@@ -342,42 +340,42 @@
      transform-origin: left;
      transition: transform 5s linear;
    }
-   
+
    .toast-notification.show::after {
      transform: scaleX(1);
    }
-   
+
    This creates a progress bar that fills over 5 seconds!
 */
 
-/* TODO #9: Stacked notification spacing (Advanced)
-   
+/* TODO #8: Stacked notification spacing (Advanced)
+
    When multiple notifications appear, they should have consistent spacing:
-   
+
    .toast-notification:not(:last-child) {
      margin-bottom: 1rem;
    }
-   
+
    And maybe push older notifications up:
-   
+
    .toast-notification:nth-child(n+4) {
      opacity: 0.8;
      transform: translateY(-10px) scale(0.95);
    }
 */
 
-/* TODO #10: Different entrance directions (Advanced)
-   
+/* TODO #9: Different entrance directions (Advanced)
+
    Try different entrance animations for variety:
-   
+
    SUCCESS (slide from right):
    .success-toast { transform: translateX(100%); }
    .success-toast.show { transform: translateX(0); }
-   
+
    WARNING (slide from top):
    .warning-toast { transform: translateY(-100%); }
    .warning-toast.show { transform: translateY(0); }
-   
+
    ERROR (scale from center):
    .error-toast { transform: scale(0.8); }
    .error-toast.show { transform: scale(1); }
@@ -385,45 +383,45 @@
 
 /* EXPERIMENT ZONE! 🧪
    ====================
-   
+
    Try these variations to perfect your notification system:
-   
-   TODO #11: Different timing patterns
+
+   TODO #10: Different timing patterns
    - transition: all 0.2s ease; (snappy, responsive)
    - transition: all 0.5s ease; (smooth, contemplative)
    - transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); (bouncy)
-   
-   TODO #12: Enhanced hover effects
+
+   TODO #11: Enhanced hover effects
    Add these to your :hover state:
    - cursor: default; (shows it's not clickable except for close)
    - transform: translateY(-4px) scale(1.02); (more dramatic lift)
    - backdrop-filter: blur(10px); (modern frosted glass effect)
-   
-   TODO #13: Notification priority levels
+
+   TODO #12: Notification priority levels
    Different visual hierarchy for different importance:
-   
+
    .toast-notification.priority-high {
      border-left-width: 6px;
      box-shadow: 0 6px 16px rgba(231, 76, 60, 0.2);
    }
-   
+
    .toast-notification.priority-low {
      opacity: 0.9;
      transform: scale(0.95);
    }
-   
-   TODO #14: Dark mode variant
-   
+
+   TODO #13: Dark mode variant
+
    .toast-notification.dark {
      background: #2c3e50;
      color: #ecf0f1;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
    }
-   
+
    .toast-notification.dark .toast-title {
      color: #ecf0f1;
    }
-   
+
    .toast-notification.dark .toast-message {
      color: #bdc3c7;
    }
@@ -431,27 +429,27 @@
 
 /* STEP 12: Real-World Toast Systems
    =================================
-   
+
    Your notification system now matches patterns from:
-   
+
    💼 BUSINESS APPLICATIONS:
    - Slack message confirmations
-   - Figma save notifications  
+   - Figma save notifications
    - Gmail send confirmations
    - Notion page updates
-   
+
    🛒 E-COMMERCE PLATFORMS:
    - Shopping cart additions
    - Order confirmations
    - Stock alerts
    - Price drop notifications
-   
+
    🎮 GAMING INTERFACES:
    - Achievement unlocks
    - Level up notifications
    - Friend requests
    - System messages
-   
+
    📱 MOBILE APP PATTERNS:
    - Instagram like notifications
    - WhatsApp message previews
@@ -461,34 +459,34 @@
 
 /* STEP 13: Accessibility and UX Considerations
    ============================================
-   
+
    SCREEN READERS: Toast notifications should be announced.
    In real implementations, add:
    - role="alert" for important messages
    - aria-live="polite" for non-critical updates
    - aria-describedby linking to message content
-   
+
    KEYBOARD NAVIGATION: Close buttons should be focusable:
-   
-   .toast-close:focus {
+
+   .toast-close-button:focus {
      outline: 2px solid #74b9ff;
      outline-offset: 2px;
    }
-   
+
    MOTION SENSITIVITY: Respect reduced motion preferences:
-   
+
    @media (prefers-reduced-motion: reduce) {
      .toast-notification {
        transition: opacity 0.2s ease;
      }
-     
+
      .toast-notification.show {
        opacity: 1;
        transform: none;
      }
    }
-   
-   AUTO-DISMISS TIMING: 
+
+   AUTO-DISMISS TIMING:
    - Success: 4-5 seconds (positive, can be quick)
    - Warning: 6-8 seconds (needs consideration time)
    - Error: Stay until dismissed (critical information)
@@ -496,29 +494,29 @@
 
 /* DEBUGGING SECTION 🔧
    =====================
-   
+
    Common toast notification issues:
-   
+
    ❌ "My notifications don't slide in!"
-   ✅ Check: Are you applying the .show class? Is the initial 
+   ✅ Check: Are you applying the .show class? Is the initial
       transform set correctly?
-   
+
    ❌ "Animations feel choppy or laggy!"
-   ✅ Try: Shorter transition durations (0.2s) or use transform 
+   ✅ Try: Shorter transition durations (0.2s) or use transform
       properties only (avoid changing width/height)
-   
+
    ❌ "Notifications overlap or stack weirdly!"
    ✅ Check: Is the toast-container using proper flexbox settings?
       Are notifications positioned correctly?
-   
+
    ❌ "Close buttons don't feel responsive!"
    ✅ Ensure: Hover states have sufficient color/background changes
       and quick transition timing (0.2s max)
-   
+
    ❌ "The system doesn't feel cohesive!"
    ✅ Check: Are all notifications using the same transition timing?
       Do they all follow the same entrance/exit patterns?
-   
+
    🎉 SUCCESS INDICATORS:
    - Smooth, consistent entrance animations
    - Clear visual hierarchy between message types
@@ -527,41 +525,41 @@
    - Professional polish that matches production apps
 */
 
-/* 🎉 FINAL CONGRATULATIONS! 
+/* 🎉 FINAL CONGRATULATIONS!
    =========================
-   
+
    You've completed the ultimate CSS transitions challenge!
-   
+
    🏆 MASTER-LEVEL ACHIEVEMENTS UNLOCKED:
    ✅ Complete state transition system architecture
    ✅ Professional notification UI patterns
    ✅ Complex multi-property animation coordination
    ✅ Production-ready component interaction design
    ✅ Accessibility integration in complex systems
-   
+
    From this single playground, you've learned techniques used in:
    - Enterprise software interfaces
    - Modern web applications
    - Mobile app notification systems
    - Real-time communication platforms
-   
+
    🚀 YOUR TRANSITION MASTERY JOURNEY:
-   
+
    Playground 1-2: State selector foundations
-   Playground 3-4: Multi-property coordination and creativity  
+   Playground 3-4: Multi-property coordination and creativity
    Playground 5-6: Professional patterns and visual sophistication
    Playground 7: Complete system architecture and polish
-   
-   You started with basic button hovers and now you can architect 
-   complete interactive systems that feel as polished as the 
+
+   You started with basic button hovers and now you can architect
+   complete interactive systems that feel as polished as the
    professional applications users interact with every day!
-   
+
    🎯 WHAT'S NEXT?
    - Combine these techniques with JavaScript for dynamic interactions
    - Explore CSS animations with @keyframes for more complex sequences
    - Study real-world applications to see these patterns in action
    - Build your own component libraries using these foundations
-   
+
    You now possess professional-level CSS transition skills.
    Go forth and make the web more delightful! ⚡✨
 */
