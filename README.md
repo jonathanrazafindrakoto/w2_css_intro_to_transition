@@ -4,15 +4,7 @@
 
 Welcome to your journey into CSS transitions! In this lab, you'll discover how professional websites create those smooth, polished interactions that make users feel delighted rather than jarred by sudden changes.
 
-## 🎯 What You'll Learn
-
-By the end of this lab, you'll master:
-
-- **CSS state selectors** - `:hover`, `:active`, `:focus` and when to use each
-- **Transition syntax** - `transition: property duration timing-function delay`
-- **Interactive design patterns** - buttons, forms, cards, galleries that feel alive
-- **Professional techniques** - timing, coordination, and user experience principles
-- **Wide CSS property exploration** - colors, transforms, shadows, and more
+By the end of this lab you'll have a good understanding of the transition property while also getting practice with state selectors, timing functions, and various CSS properties.
 
 ## 🚀 Getting Started
 
