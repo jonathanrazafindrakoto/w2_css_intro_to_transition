@@ -72,9 +72,10 @@
   /* Prepare for animations */
   transform-origin: bottom; /* Scale from the bottom */
 
-  /* TODO #1: Add the base transition
+  /* TODO #1: Add the base transition*/
+  transition: height 0.4s ease, transform 0.4s ease, filter 0.4s ease;
 
-     We'll be animating the height and transform properties.
+     /*We'll be animating the height and transform properties.
      Add this line:
 
      transition: height 0.4s ease, transform 0.4s ease;
@@ -140,6 +141,7 @@
      This doubles their height! You could also try transform: scaleY(2);
      for a similar effect, but height is more dramatic for this demo.
   */
+  height: 120px;
 }
 
 /* STEP 6: The Magic of Staggered Delays
@@ -156,37 +158,37 @@
 
 .rainbow-container:hover .stripe-1 {
   /* TODO #3: First stripe starts immediately */
-  /* transition-delay: 0s; */
+  transition-delay: 0s;
 }
 
 .rainbow-container:hover .stripe-2 {
   /* TODO #4: Second stripe waits a bit */
-  /* transition-delay: 0.1s; */
+  transition-delay: 0.1s;
 }
 
 .rainbow-container:hover .stripe-3 {
   /* TODO #5: Third stripe waits longer */
-  /* transition-delay: 0.2s; */
+  transition-delay: 0.2s;
 }
 
 .rainbow-container:hover .stripe-4 {
   /* TODO #6: Fourth stripe waits even longer */
-  /* transition-delay: 0.3s; */
+  transition-delay: 0.3s;
 }
 
 .rainbow-container:hover .stripe-5 {
   /* TODO #7: Fifth stripe continues the pattern */
-  /* transition-delay: 0.4s; */
+  transition-delay: 0.4s;
 }
 
 .rainbow-container:hover .stripe-6 {
   /* TODO #8: Sixth stripe near the end */
-  /* transition-delay: 0.5s; */
+  transition-delay: 0.5s;
 }
 
 .rainbow-container:hover .stripe-7 {
   /* TODO #9: Last stripe completes the wave */
-  /* transition-delay: 0.6s; */
+  transition-delay: 0.6s;
 }
 
 /* STEP 7: Experience the Wave!
@@ -282,7 +284,7 @@
 
 /* TODO #15: Bidirectional cascade (Advanced)
 
-   Make the wave go from both ends toward the middle:
+   Make the wave go from both ends toward the middle:*/
 
    .rainbow-container:hover .stripe-1 { transition-delay: 0.3s; }
    .rainbow-container:hover .stripe-2 { transition-delay: 0.2s; }
@@ -291,7 +293,6 @@
    .rainbow-container:hover .stripe-5 { transition-delay: 0.1s; }
    .rainbow-container:hover .stripe-6 { transition-delay: 0.2s; }
    .rainbow-container:hover .stripe-7 { transition-delay: 0.3s; }
-*/
 
 /* TODO #16: Color shifting cascade (Advanced)
 
@@ -304,6 +305,14 @@
    Add filter to your base transition:
    transition: height 0.4s ease, transform 0.4s ease, filter 0.4s ease;
 */
+   .rainbow-container:hover .stripe-1 { filter: brightness(1.3); }
+   .rainbow-container:hover .stripe-2 { filter: brightness(1.3); }
+   .rainbow-container:hover .stripe-3 { filter: brightness(1.3); }
+   .rainbow-container:hover .stripe-4 { filter: brightness(1.3); }
+   .rainbow-container:hover .stripe-5 { filter: brightness(1.3); }
+   .rainbow-container:hover .stripe-6 { filter: brightness(1.3); }
+   .rainbow-container:hover .stripe-7 { filter: brightness(1.3); }
+
 
 /* STEP 10: Real-World Applications
    ================================

@@ -54,6 +54,7 @@
      Add this comprehensive transition:
      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 /* STEP 2: Featured Plan Hierarchy
@@ -75,6 +76,7 @@
 
      This subtle scaling makes it feel more important without being dramatic.
   */
+  transform: scale(1.05);
 }
 
 .plan-badge {
@@ -171,6 +173,7 @@
      For the featured card, combine with its existing scale:
      You might need: transform: translateY(-8px) scale(1.05);
   */
+  transform: translateY(-8px);
 
   /* TODO #4: Add elevated shadow
 
@@ -179,6 +182,7 @@
 
      This makes the card feel like it's floating higher above the page.
   */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 
   /* TODO #5: Add selection border hint
 
@@ -187,6 +191,7 @@
 
      This creates a gentle selection preview.
   */
+  border-color: #74b9ff;
 }
 
 /* STEP 5: Featured Card Special Hover State
@@ -206,6 +211,8 @@
      Try: transform: translateY(-8px) scale(1.05);
      And: box-shadow: 0 16px 32px rgba(116, 185, 255, 0.2);
   */
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(116, 185, 255, 0.2);
 }
 
 /* STEP 6: Button Integration
@@ -236,6 +243,7 @@
 
      Slightly faster than the card transitions for responsiveness.
   */
+  transition: all 0.2s ease;
 }
 
 /* Featured plan gets a special button */
@@ -257,6 +265,12 @@
      - transform: translateY(-2px);
      - box-shadow: 0 6px 12px rgba(116, 185, 255, 0.4);
   */
+   background: #e9ecef;
+   transform: translateY(-2px);
+
+   background: linear-gradient(135deg, #0984e3, #74b9ff);
+   transform: translateY(-2px);
+   box-shadow: 0 6px 12px rgba(116, 185, 255, 0.4);
 }
 
 .select-plan:active {
@@ -267,6 +281,7 @@
 
      This gives satisfying feedback for the click action.
   */
+  transform: translateY(0px);
 }
 
 /* STEP 7: Focus States for Accessibility
@@ -284,6 +299,10 @@
 
      This ensures keyboard users get visual feedback too.
   */
+   transform: translateY(-2px);
+   box-shadow: 0 6px 12px rgba(116, 185, 255, 0.4);
+   outline: 3px solid #74b9ff;
+   outline-offset: 2px;
 }
 
 /* STEP 8: Experience the Complete System!
@@ -339,15 +358,25 @@
    @keyframes fadeInUp {
      from { opacity: 0; transform: translateY(30px); }
      to { opacity: 1; transform: translateY(0); }
+   }*/
+     .pricing-card { opacity: 0; animation: fadeInUp 0.6s ease forwards; }
+   .basic-plan { animation-delay: 0.1s; }
+   .pro-plan { animation-delay: 0.2s; }
+   .enterprise-plan { animation-delay: 0.3s; }
+
+   @keyframes fadeInUp {
+     from { opacity: 0; transform: translateY(30px); }
+     to { opacity: 1; transform: translateY(0); }
    }
 
-   TODO #14: Plan comparison highlighting
+  /* TODO #14: Plan comparison highlighting
    When hovering one card, slightly fade the others:
 
    .pricing-card:not(:hover) { opacity: 0.7; }
 
    This helps users focus on one option at a time!
 */
+.pricing-card:not(:hover) { opacity: 0.7; }
 
 /* STEP 9: A/B Testing Considerations
    ===================================
@@ -403,7 +432,7 @@
 */
 
 /* 🎉 CONGRATULATIONS!
-   ===================
+   ===================     
 
    You've architected a professional-grade pricing interface!
 

@@ -52,6 +52,7 @@
   margin: 10px;
 
   /* We'll add our transition here soon! */
+  transition: all 0.3s ease;
 }
 
 /* STEP 2: Understanding State Selectors
@@ -72,26 +73,29 @@
 /* HOVER STATE: Mouse over the button */
 .responsive-button:hover {
   /* TODO #1: Uncomment the line below to see the instant color change */
-  /* background-color: #2980b9; */
+   background-color: #2980b9;
+   box-shadow: 0 8px 16px rgba(52, 152, 219, 0.3);
+   letter-spacing: 1px;
+   border-radius: 12px;
 
   /* TODO #2: Uncomment this line to add subtle scaling */
-  /* transform: scale(1.05); */
+   transform: scale(1.05);
 }
 
 /* ACTIVE STATE: Button being pressed */
 .responsive-button:active {
   /* TODO #3: Uncomment this line to show the "pressed" effect */
-  /* transform: scale(0.98); */
+   transform: scale(0.98);
 
   /* TODO #4: Uncomment this line for a darker pressed color */
-  /* background-color: #1f5f8b; */
+  background-color: #1f5f8b;
 }
 
 /* FOCUS STATE: Button focused with keyboard (accessibility!) */
 .responsive-button:focus {
   /* TODO #5: Uncomment this line for accessibility highlighting */
-  /* outline: 3px solid #74b9ff; */
-  /* outline-offset: 2px; */
+  outline: 3px solid #74b9ff;
+  outline-offset: 2px;
 }
 
 /* STEP 3: The Problem with Instant Changes

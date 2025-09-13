@@ -73,6 +73,7 @@
      The container itself will have a subtle elevation effect:
      transition: box-shadow 0.3s ease, transform 0.3s ease;
   */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* STEP 3: Image Placeholder Styling
@@ -95,6 +96,8 @@
      Notice we're using 0.6s - longer than buttons or cards because 
      this is a more cinematic, contemplative interaction.
   */
+  transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 /* Beautiful gradient "images" */
@@ -143,6 +146,8 @@
      
      This positions it completely below the visible area.
   */
+       opacity: 0;
+     transform: translateY(100%);
 
   /* TODO #4: Add overlay transition
      
@@ -151,6 +156,7 @@
      
      Slightly faster than the image zoom for responsive layering.
   */
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .image-overlay h4 {
@@ -191,6 +197,8 @@
      
      Subtle elevation that doesn't compete with the image zoom.
   */
+   transform: translateY(-4px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item:hover .image-placeholder {
@@ -202,6 +210,7 @@
      1.1 means 10% larger - subtle but impactful.
      Try 1.15 for more drama, or 1.05 for subtlety!
   */
+  transform: scale(1.1);
 }
 
 .gallery-item:hover .image-overlay {
@@ -213,6 +222,8 @@
      
      This brings it into view with smooth animation.
   */
+   opacity: 1;
+   transform: translateY(0);
 }
 
 /* STEP 6: Experience the Cinema!

@@ -91,6 +91,7 @@
   color: #2c3e50;
 
   /* We'll add transitions here soon! */
+   transition: all 0.3s ease;
 }
 
 /* STEP 3: The :focus State (Accessibility Essential!)
@@ -111,13 +112,13 @@
 
 .form-input:focus {
   /* TODO #1: Uncomment this line to add a focus border color */
-  /* border-color: #74b9ff; */
+   border-color: #74b9ff;
 
   /* TODO #2: Uncomment this line to add a subtle background change */
-  /* background-color: #f8f9ff; */
+   background-color: #f8f9ff;
 
   /* TODO #3: Uncomment this line for a gentle glow effect */
-  /* box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1); */
+   box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1);
 }
 
 /* STEP 4: Experience the Jarring Changes
@@ -191,7 +192,7 @@
 .form-input:hover {
   /* TODO #5: Add a subtle hover effect */
   /* Uncomment this line for a gentle border color hint */
-  /* border-color: #b6c0ca; */
+   border-color: #b6c0ca;
 }
 
 /* STEP 8: Textarea Special Considerations
@@ -208,10 +209,10 @@
 
 textarea.form-input {
   /* TODO #6: Uncomment this line to prevent awkward resizing */
-  /* resize: vertical; */
+   resize: vertical;
 
   /* Textareas need a bit more height */
-  min-height: 100px;
+   min-height: 100px;
 }
 
 /* STEP 9: Advanced Focus Effects (Optional Challenge)

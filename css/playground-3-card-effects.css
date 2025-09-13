@@ -116,35 +116,46 @@
 .feature-card:hover {
   /* TODO #2: Add elevation movement
 
-     Make the card "lift" by moving it up slightly.
-     Try: transform: translateY(-8px);
+     /* Make the card "lift" by moving it up slightly. */
+   transform: translateY(-8px);
 
-     This creates the illusion that the card is rising toward the user!
-  */
+/*      This creates the illusion that the card is rising toward the user!
+  */ */
 
   /* TODO #3: Add elevation shadow
 
-     Create a bigger, more dramatic shadow to simulate the card
-     being higher above the page.
+/*      Create a bigger, more dramatic shadow to simulate the card
+     being higher above the page. */
 
-     Try: box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 
-     Compare this to the original: 0 2px 8px rgba(0, 0, 0, 0.1)
+/*      Compare this to the original: 0 2px 8px rgba(0, 0, 0, 0.1)
      - Bigger Y offset (12px vs 2px) = higher elevation
      - Bigger blur (24px vs 8px) = softer, more realistic shadow
      - Darker opacity (0.15 vs 0.1) = more prominent depth
   */
-
+ */
   /* TODO #4: Optional - Add subtle scaling
 
-     If you want the card to feel even more prominent, you can
-     combine the translateY with a gentle scale:
+/*      If you want the card to feel even more prominent, you can
+     combine the translateY with a gentle scale: */
 
-     Try: transform: translateY(-8px) scale(1.02);
+   transform: translateY(-8px) scale(1.02);
 
-     This makes the card slightly larger AND higher - very engaging!
-  */
+/*      This makes the card slightly larger AND higher - very engaging! */
+   transition: transform 0.2s ease, box-shadow 0.4s ease;
 }
+.feature-card:hover h3 {
+   color: #74b9ff; 
+}
+.feature-card:hover p {
+   color: #2c3e50; 
+}
+.feature-card:hover .card-icon {
+   transform: scale(1.1);
+   transition: transform 0.3s ease;
+   }
+
 
 /* STEP 4: Experience the Magic!
    =============================
